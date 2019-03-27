@@ -1,6 +1,7 @@
 package client;
 
 import java.rmi.Naming;
+import server.Notification;
 
 public class HelloClient {
 
@@ -20,7 +21,8 @@ public class HelloClient {
         System.out.println("Now connected to: " + h);
 
         // invoke the remote method
-        String message = h.sayHello("Donald Duck");
-        System.out.println("HelloClient: " + message);
+        Notification n = h.sayHello("Donald Duck");
+        System.out.println("HelloClient: " + n.getMessage());
+        System.out.println(n);
     }
 }
